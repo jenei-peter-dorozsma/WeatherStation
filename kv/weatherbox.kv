@@ -1,0 +1,45 @@
+#:include kv/templates/BoxLayoutBox.kv
+
+<WeatherBox@BoxLayoutBox>:
+    orientation: 'vertical'
+
+    H2:
+        id: sky_status_label
+        text: ''
+        size_hint_y: None
+        height: self.texture_size[1]
+        halign: 'center'
+
+    StackLayout:
+        orientation: 'lr-tb'
+
+        Image:
+            source: ''
+            id: sky_icon_image
+            size_hint: None, None
+            width: self.parent.parent.width/3
+            height: self.parent.parent.height/3
+                
+        GridLayout:
+            rows: 2
+            cols: 1
+            padding: 10
+            spacing: 5
+            size_hint: None, None
+            width: self.parent.parent.width - sky_icon_image.width-20
+            height: sky_icon_image.height
+
+            H1:
+                id: temperature_label
+                text: ''
+                size_hint_y: None
+                height: self.texture_size[1]
+                halign: 'center'
+        
+            H2:
+                id: bottom_line_label
+                text: ''
+                size: self.size
+                size_hint_y: None
+                height: self.texture_size[1]
+                halign: 'center'

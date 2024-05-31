@@ -1,0 +1,95 @@
+#:include kv/templates/GridLayoutBox.kv
+
+<BikeBox@GridLayoutBox>:
+    cols: 1
+    rows: 4
+
+    StackLayout:
+        orientation: 'lr-tb'
+
+        Image:
+            id: part1_icon5
+            source: 'icons/day/wind/f5_off.png'
+            size_hint: None, None
+            width: self.parent.parent.width/5.5
+            height: self.parent.parent.height/5.5
+
+        Image:
+            id: part1_icon4
+            source: 'icons/day/wind/f4_off.png'
+            size_hint: None, None
+            width: self.parent.parent.width/5.5
+            height: self.parent.parent.height/5.5
+
+        Image:
+            id: part1_icon3
+            source: 'icons/day/wind/f3_off.png'
+            size_hint: None, None
+            width: self.parent.parent.width/5.5
+            height: self.parent.parent.height/5.5
+
+        Image:
+            id: part1_icon2
+            source: 'icons/day/wind/f2_off.png'
+            size_hint: None, None
+            width: self.parent.parent.width/5.5
+            height: self.parent.parent.height/5.5
+
+        Image:
+            id: part1_icon1
+            source: 'icons/day/wind/f1_off.png'
+            size_hint: None, None
+            width: self.parent.parent.width/5.5
+            height: self.parent.parent.height/5.5
+
+    H2:
+        id: bike_part_1
+        text: 'Első szakasz'
+        text_size: self.size
+        halign: 'center'
+        valign: 'middle'
+    
+    StackLayout:
+        orientation: 'lr-tb'
+
+        Image:
+            id: part2_icon5
+            source: 'icons/day/wind/f5_off.png'
+            size_hint: None, None
+            width: self.parent.parent.width/5.5
+            height: self.parent.parent.height/5.5
+
+        Image:
+            id: part2_icon4
+            source: 'icons/day/wind/f4_off.png'
+            size_hint: None, None
+            width: self.parent.parent.width/5.5
+            height: self.parent.parent.height/5.5
+
+        Image:
+            id: part2_icon3
+            source: 'icons/day/wind/f3_off.png'
+            size_hint: None, None
+            width: self.parent.parent.width/5.5
+            height: self.parent.parent.height/5.5
+
+        Image:
+            id: part2_icon2
+            source: 'icons/day/wind/f2_off.png'
+            size_hint: None, None
+            width: self.parent.parent.width/5.5
+            height: self.parent.parent.height/5.5
+
+        Image:
+            id: part2_icon1
+            source: 'icons/day/wind/f1_off.png'
+            size_hint: None, None
+            width: self.parent.parent.width/5.5
+            height: self.parent.parent.height/5.5
+
+    H2:
+        id: bike_part_2
+        text: 'Második szakasz'
+        text_size: self.size
+        halign: 'center'
+        valign: 'middle'

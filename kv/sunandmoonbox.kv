@@ -1,0 +1,59 @@
+#:include kv/templates/GridLayoutBox.kv
+
+<SunAndMoonBox@GridLayoutBox>:
+    cols: 2
+    rows: 3
+
+    Image:
+        id: icon_sr
+        source: 'icons/day/misc/sun_rise.png'
+        size_hint: None, None
+        width: self.parent.width/4
+        height: self.parent.height/4
+
+    H2:
+        id: sunrise_label
+        text: ''
+        size_hint: None, None
+        height: icon_sr.height
+        width: self.texture_size[0]
+        size_hint_y: None
+        size_hint_x: None
+        valign: 'middle'
+        halign: 'left'
+
+    Image:
+        id: icon_ss
+        source: 'icons/day/misc/sun_set.png'
+        size_hint: None, None
+        width: self.parent.width/4
+        height: self.parent.height/4
+
+    H2:
+        id: sunset_label
+        text: ''
+        size_hint: None, None
+        height: icon_ss.height
+        width: self.texture_size[0]
+        size_hint_y: None
+        size_hint_x: None
+        valign: 'middle'
+        halign: 'left'
+    
+    Image:
+        source: ''
+        id: moon_phase_image
+        size_hint: None, None
+        width: self.parent.width/4
+        height: self.parent.height/4
+
+    H2:
+        id: moon_phase_label
+        text: ''
+        size_hint: None, None
+        height: moon_phase_image.height
+        width: self.texture_size[0]
+        size_hint_y: None
+        size_hint_x: None
+        valign: 'middle'
+        halign: 'left'

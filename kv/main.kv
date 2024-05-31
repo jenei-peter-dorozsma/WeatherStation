@@ -1,0 +1,41 @@
+#:include kv/weatherbox.kv
+#:include kv/sunandmoonbox.kv
+#:include kv/windbox.kv
+#:include kv/bikebox.kv
+#:include kv/datebox.kv
+#:include kv/funbox.kv
+
+BoxLayout:
+    orientation: 'vertical'
+    padding: 10
+    spacing: 10
+    
+    BoxLayout: # 1st row - 4 boxes
+        orientation: 'horizontal'
+        padding: 10
+        spacing: 10
+        size_hint_y: 0.50
+        
+        WeatherBox:
+            id: weather_box
+
+        SunAndMoonBox:
+            id: sun_and_moon_box
+
+        WindBox:
+            id: wind_box
+
+        BikeBox:
+            id: bike_box
+
+    BoxLayout: # 2nd row - 2 boxes
+        orientation: 'horizontal'
+        padding: 10
+        spacing: 10
+
+        DateBox:
+            id: date_box
+            width: weather_box.width
+
+        FunBox:
+            id: fun_box

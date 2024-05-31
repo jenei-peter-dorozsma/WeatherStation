@@ -1,0 +1,41 @@
+#:include kv/templates/GridLayoutBox.kv
+
+<WindBox@GridLayoutBox>:
+    cols: 2
+    rows: 3 
+    
+    Image:
+        id: icon_wd
+        source: 'icons/day/misc/wind_direction.png'
+        size_hint: None, None
+        width: self.parent.width/4
+        height: self.parent.height/4
+
+    H2:
+        id: wind_description_label
+        text: ''
+        size_hint: None, None
+        height: icon_wd.height
+        width: self.texture_size[0]
+        size_hint_y: None
+        size_hint_x: None
+        valign: 'middle'
+        halign: 'left'
+
+    Image:
+        id: icon_wp
+        source: 'icons/day/misc/wind_power.png'
+        size_hint: None, None
+        width: self.parent.width/4
+        height: self.parent.height/4
+
+    H2:
+        id: wind_speed_label
+        text: ''
+        size_hint: None, None
+        height: icon_wp.height
+        width: self.texture_size[0]
+        size_hint_y: None
+        size_hint_x: None
+        valign: 'middle'
+        halign: 'left'

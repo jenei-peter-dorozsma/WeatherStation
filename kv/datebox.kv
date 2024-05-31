@@ -1,0 +1,30 @@
+#:include kv/templates/StackLayoutBox.kv
+
+<DateBox@StackLayoutBox>:
+    orientation: 'tb-rl'
+    size_hint_x: None
+
+    H1:
+        id: clock_label
+        text: ''
+        size_hint_y: None
+        height: self.texture_size[1]
+    
+    H2:
+        id: date_label
+        text: ''
+        size_hint_y: None
+        height: self.texture_size[1]
+
+    H2:
+        id: day_of_the_week_label
+        text: ''
+        size_hint_y: None
+        height: self.texture_size[1]
+
+    H2:
+        id: last_update_label
+        text: ''
+        size_hint: None, None
+        height: self.texture_size[1]
+        width: self.texture_size[0]

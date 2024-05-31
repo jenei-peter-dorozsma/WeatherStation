@@ -1,0 +1,11 @@
+#:include kv/templates/StackLayoutBox.kv
+
+<FunBox@StackLayoutBox>:
+    orientation: 'tb-lr'
+
+    Image:
+        id: comics_image
+        source: 'tmp/comics.png'
+        size_hint: 1, 1
+        allow_stretch: True
+        keep_ratio: True

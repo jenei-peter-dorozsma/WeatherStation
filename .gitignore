@@ -1,0 +1,8 @@
+.env
+__pycache__
+.DS_Store
+fonts/.DS_Store
+icons/.DS_Store
+icons/day/.DS_Store
+icons/day/misc/.DS_Store
+
