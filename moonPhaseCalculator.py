@@ -3,16 +3,19 @@
 # see the LICENSE file in the root directory of this project or visit
 # https://github.com/jenei-peter-dorozsma/WeatherStation
 
-from datetime import datetime as dt
-
 # Moon phase estimation based on this document:
 # https://www.subsystems.us/uploads/9/8/9/4/98948044/moonphase.pdf
+
+import math
+from datetime import datetime as dt
+
+LUNAR_CYCLE = 29.53059
 
 
 class MoonPhaseCalculator:
     def __init__(self, base_date=(2000, 1, 6)):
         self.base_date = base_date
-        self.lunar_cycle = 29.5306
+        # self.lunar_cycle = 29.5306
 
     def to_julian_date(self, year, month, day):
         if month in (1, 2):
@@ -54,13 +57,27 @@ class MoonPhaseCalculator:
             phase_index = 5
         elif 22 <= moon_age <= 23:
             phase_index = 6
-        elif 23 < moon_age < 29.5306:
+        elif 23 < moon_age < LUNAR_CYCLE:
             phase_index = 7
 
         phase_name = list(phases.keys())[phase_index]
         image_name = phases[phase_name]
 
+        illumination = self.calculate_moon_brightness(moon_age)
+
+        print(f'Phase: {phase_name}')
+
         return (phase_name, image_name)
+
+    def calculate_moon_brightness(self, moon_age):
+        illumination = 0.5 * (1 - math.cos(2 * math.pi * moon_age / LUNAR_CYCLE))
+        illumination_percentage = illumination * 100
+        print(f'Age: {moon_age}')
+        print(f'Brightness: {illumination_percentage}')
+        illumination_percentage = round(illumination_percentage, 2)
+        print(f'Rounded: {illumination_percentage}')
+
+        return illumination_percentage
 
     def get_actual_moon_phase(self):
         year = dt.now().year
@@ -80,12 +97,16 @@ class MoonPhaseCalculator:
 
         # calulate the age of the moon
         jd_delta = jd_today - jd_base_date
-        new_moons = jd_delta / self.lunar_cycle
-        moon_age = (new_moons - int(new_moons)) * self.lunar_cycle
+        new_moons = jd_delta / LUNAR_CYCLE
+        moon_age = (new_moons - int(new_moons)) * LUNAR_CYCLE
 
         return self.moon_age_to_phase(moon_age)
 
 
 if __name__ == '__main__':
     moon_calculator = MoonPhaseCalculator()
-    print(moon_calculator.get_actual_moon_phase())
+    # print(moon_calculator.get_actual_moon_phase())
+
+    for y in range(1, 31):
+        print(f"\n 2024-07-{y}, ")
+        moon_calculator.get_moon_phase(2024, 6, y)
